@@ -10,34 +10,33 @@ function flipCard() {
         // first user click
         hasFlippedCard = true;
         firstCard = this;
-    } else {
-        // second user click
-        hasFlippedCard = false;
-        secondCard = this;
 
-        // console.log({
-        //     firstCard,
-        //     secondCard
-        // });
-
-        // check that cards match
-        // console.log(firstCard.dataset.framework);
-        // console.log(secondCard.dataset.framework);
-
-        if (firstCard.dataset.framework === secondCard.dataset.framework) {
-            // the cards match!
-            firstCard.removeEventListener('click', flipCard);
-            secondCard.removeEventListener('click', flipCard);
-        } else {
-            setTimeout(() => {
-                firstCard.classList.remove('flip');
-                firstCard.classList.remove('flip');
-            }, 1500);
-
-        }
-
-        console.log('Function executed');
+        return;
     }
+
+    // second user click
+    hasFlippedCard = false;
+    secondCard = this;
+
+    checkForMatch();
+}
+
+function checkForMatch() {
+    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+    isMatch ? disableCards() : unFlipCards();
+}
+
+function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+}
+
+function unFlipCards() {
+    setTimeout(() => {
+        firstCard.classList.remove('flip');
+        firstCard.classList.remove('flip');
+    }, 1500);
 }
 
 cards.forEach(card => {
