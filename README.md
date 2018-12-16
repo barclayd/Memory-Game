@@ -1,6 +1,8 @@
 # Memory-Game
 Basic memory game written in Vanilla JavaScript
 
+GIF:
+
 Uses advanced CSS and JS to create a memory game based on framework logos.
 
 #### Default Screen
