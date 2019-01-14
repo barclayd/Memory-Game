@@ -7,7 +7,7 @@ Uses advanced CSS and JS to create a memory game based on framework logos.
 
 **Deployed Live**: https://matching-cards.herokuapp.com/
 
-##### Demo
+#### Demo
 
 ![Memory Game](https://user-images.githubusercontent.com/39765499/51112996-80199800-17f8-11e9-8a31-c9fe9dcd99a6.gif)
 
